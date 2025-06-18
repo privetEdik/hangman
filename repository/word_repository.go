@@ -14,7 +14,12 @@ func GetRandomWord(filePath string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	defer file.Close()
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+
+		}
+	}(file)
 
 	var words []string
 	scanner := bufio.NewScanner(file)
