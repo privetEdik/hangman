@@ -9,7 +9,7 @@ func main() {
 	input := io.NewInput()
 
 	for input.ConfirmStart() {
-		session := session.NewGameSession()
-		session.Run()
+		seance := session.NewGameSession()
+		seance.Run()
 	}
 }
